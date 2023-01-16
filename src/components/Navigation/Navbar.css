@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logo {
+    font-family: "Maragsa", sans-serif;
+    color: white;
+    outline: 1px solid black;
+    font-size: 1.4em;
+    background: black;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@layer components {
+    .navbar {
+        display: grid;
+        position: relative;
+        grid-template-columns: auto 1fr;
+        background: white;
+        width: 100%;
+        z-index: 40;
+        height: var(--navbar-height);
+        /*padding-top: 5px;*/
+    }
+
+    .navbar .menu-content {
+        height: var(--navbar-height);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar .link-component {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        font-size: .7em;
+        color: black;
+        border: 4px solid white;
+        outline: 1px solid black;
+        background: white;
+    }
+
+    .navbar .link-component:hover {
+        background: black;
+        border: 4px solid white;
+        outline: 1px solid black;
+        color: white;
+    }
+
+
+    @media (min-width: 640px) {
+        .changeThemeContainer {
+            right: 6.4rem !important;
+        }
+    }
+}
