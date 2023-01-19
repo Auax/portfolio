@@ -1,62 +1,32 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  height: calc(100vh - var(--navbar-height));
-  text-align: center;
-  width: 100%;
-  background: #000000;
+
+export const HomeContainer = styled.div`
+  width: 43%;
+  height: 100vh;
+  background: #000249;
+  margin: 0;
+  padding-left: 118px;
+  padding-top: 68px;
+`;
+
+
+export const Title = styled.h1`
+  color: white;
+  font-weight: bold;
+  font-stretch: expanded;
+  margin-top: 100px;
+  font-size: 5em;
+  line-height: 77px;
 `;
 
 export const Subtitle = styled.h2`
-  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
   font-stretch: expanded;
-  font-size: .9em;
-  margin-top: -20px;
-  transition: all .5s ease-in-out;
-`
-
-export const SpinLogoImg = styled.img`
-  position: absolute;
-  width: 80%;
-  left: 50%;
-  top: 50%;
-  user-select: none;
-  opacity: 0.2;
-  z-index: 1;
-  transform: translate(-50%, -50%);
-`;
-
-export const EnterButtonContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  transform: translatey(-50%);
-  text-align: center;
-  mix-blend-mode: difference;
-  z-index: 2;
-  width: 100%;
-`;
-
-export const EnterButton = styled.button`
-  //text-decoration: 4px solid underline;
-  color: white;
-  font-weight: 900;
-  font-stretch: expanded;
-  font-size: 3em;
-  font-style: oblique 0deg;
-  text-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
-  transition: all .5s ease-in-out;
-
-  
-  &:hover {
-    transform: scale(120%);
-    font-stretch: ultra-expanded;
-    font-weight: 800;
-    font-style: oblique 10deg;
-  }
-
-  &:hover + h2 {
-    transform: translateY(10px) scale(95%) skewX(50deg);
-    filter: blur(5px);
-    opacity: 0;
-  }
+  letter-spacing: 3px;
+  font-size: 20px;
+  line-height: 28px;
+  margin-top: 0.5em;
+  max-width: 70%;
 `;

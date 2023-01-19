@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logo {
+    /*margin-left: 118px;*/
+    /*margin-top: 68px;*/
+    font-family: "Maragsa", sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo__title {
+    font-size: 2.5em;
+}
+
+.logo__subtitle {
+    font-size: 1.25em;
+    font-weight: 900;
+    margin-top: -12px;
+}
