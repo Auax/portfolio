@@ -8,6 +8,7 @@ export const MenuContainer = styled.div`
 `;
 
 export const MenuItem = styled.span`
+  width: fit-content;
   color: ${({disabled = false}) => disabled ? "rgba(255, 255, 255, 0.6)" : "white"};
   margin-left: ${({disabled = false}) => disabled ? "0" : "25px"};
   font-size: 2.5em;
@@ -15,16 +16,9 @@ export const MenuItem = styled.span`
   font-weight: 400;
   font-stretch: expanded;
   cursor: pointer;
-  transition: color 0.2s ease-in-out;
-  width: fit-content;
+  transition: color 0.2s ease-in-out, margin-left 0.3s ease-in-out;
 
   &:hover {
     color: #5a697c;
   }
-`;
-
-export const IconImg = styled.img`
-  width: 15px;
-  position: absolute;
-  transform: translateY(20px);
 `;

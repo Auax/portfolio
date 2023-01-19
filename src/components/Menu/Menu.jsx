@@ -1,14 +1,25 @@
-import React from 'react';
-import {IconImg, MenuContainer, MenuItem} from "./MenuStyles";
-import StarIcon from "../../resources/images/StarIcon.svg";
+import React, {useEffect, useRef, useState} from 'react';
+import {MenuContainer, MenuItem} from "./MenuStyles";
+import SelectedIcon from "./SelectedIcon";
 
 const Menu = (props) => {
+    const options = ["Projects", "About me", "Contact"]
+    const [selectedIdx, setSelectedIdx] = useState(0);
+    const [height, setHeight] = useState(0)
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        setHeight(containerRef.current.clientHeight);
+    });
+
+    const render = options.map((option, idx) =>
+        <MenuItem disabled={idx !== selectedIdx}>{option}</MenuItem>
+    );
+
     return (
-        <MenuContainer className={props.className}>
-            <IconImg src={StarIcon} alt="selected icon"/>
-            <MenuItem>Projects</MenuItem>
-            <MenuItem disabled={true}>About me</MenuItem>
-            <MenuItem disabled={true}>Contact</MenuItem>
+        <MenuContainer className={props.className} ref={containerRef}>
+            <SelectedIcon selected={selectedIdx} menuHeight={height} itemsCount={options.length}/>
+            {render}
         </MenuContainer>
     );
 };
