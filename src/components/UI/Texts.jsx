@@ -52,7 +52,7 @@ export const SubtitleBase = css`
 
 export const Subtitle = styled.p`
   ${SubtitleBase};
-  text-align: ${props => props.align || "left"};
+  ${props => props.align ? `text-align: ${props.align}` : ""};
   color: rgba(255, 255, 255, 0.6);
   font-size: 1.25em;
   margin-top: 0.5em;

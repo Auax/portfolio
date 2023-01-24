@@ -1,12 +1,16 @@
 import React from 'react';
 import styled from "styled-components";
 import Logo from "../../components/Logo/Logo";
-import {Subtitle, TitleH1} from "../../components/UI/Texts";
+import {Subtitle, TitleBase} from "../../components/UI/Texts";
+import Card from "../../components/Card/Card";
+import img from "../../resources/images/sample_img_1.png";
+
 
 const IntroContainer = styled.div`
   width: 100%;
   height: 100vh;
   background: #000249;
+  text-align: center;
   margin: 0;
   padding: 68px 100px 20px 100px;
 
@@ -15,38 +19,58 @@ const IntroContainer = styled.div`
   }
 
   @media (max-width: 1024px) {
-    text-align: center;
-    padding: 20px;
+    padding: 68px 30px 20px 30px;
+  }
+`;
+const IntroTitle = styled.h1`
+  ${TitleBase};
+  margin-top: 100px;
+  font-size: 6em;
+
+  @media (max-width: 1536px) {
+    font-size: 5em;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 4em;
   }
 `;
 
 const IntroSubtitle = styled(Subtitle)`
-  max-width: 80%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 
   @media (max-width: 1536px) {
-    max-width: 90%;
-  }
-
-  @media (max-width: 1024px) {
-    max-width: 60%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    width: 60%;
   }
 
   @media (max-width: 700px) {
-    max-width: 90%;
+    width: 80%;
   }`;
 
 const Introduction = () => {
     return (
         <IntroContainer>
-            <div className="lg:mx-0 mx-auto w-fit">
+            <div className="mx-auto w-fit">
                 <Logo/>
             </div>
-            <TitleH1>I’m a React developer</TitleH1>
-            <IntroSubtitle>Welcome to this personal portfolio project, where I showcase some of my projects.
-            </IntroSubtitle>
+            <IntroTitle>Hi! I'm a React dev.</IntroTitle>
+            <IntroSubtitle>Welcome to this personal portfolio project, where I showcase some of my
+                projects.</IntroSubtitle>
+            <div className="mx-auto text-center">
+                <div className="w-1/4 mx-auto text-left mt-10 bg-black/30 shadow-2xl p-10 rounded-xl">
+                    <Card
+                        title="Last"
+                        description="Something"
+                        image={img}
+                    />
+                    <small className="text-white/50">
+                        Last Project
+                    </small>
+                </div>
+            </div>
         </IntroContainer>
     );
 };

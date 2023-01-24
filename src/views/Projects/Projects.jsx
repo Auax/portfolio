@@ -13,7 +13,7 @@ const ProjectContainer = styled.div`
   padding: 4em;
 
   & {
-    max-width: 70%;
+    max-width: 50%;
   }
 `;
 
@@ -22,12 +22,12 @@ const Projects = () => {
         <ProjectContainer>
             <Card
                 title="Samurai"
-                subtitle="AI generated image from prompt using Midjoruney"
+                description="AI generated image from prompt using Midjoruney"
                 image={sampleImage1}
             />
             <Card
                 title="Samurai"
-                subtitle="AI generated image from prompt using Midjoruney"
+                description="AI generated image from prompt using Midjoruney"
                 image={sampleImage1}/>
         </ProjectContainer>
     );

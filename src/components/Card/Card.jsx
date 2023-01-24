@@ -2,10 +2,6 @@ import React from 'react';
 import styled from "styled-components";
 import {Subtitle, SubtitleBase, TitleBase, TitleH2} from "../UI/Texts";
 
-const CardContainer = styled.div`
-  text-align: left;
-`;
-
 const CardTitle = styled.h3`
   font-size: 2em;
   ${TitleBase}
@@ -25,11 +21,11 @@ const CardImage = styled.img`
 
 const Card = (props) => {
     return (
-        <CardContainer className={props.className}>
+        <div className={props.className}>
             <CardTitle>{props.title}</CardTitle>
-            <CardDescription>{props.subtitle}</CardDescription>
+            <CardDescription>{props.description}</CardDescription>
             <CardImage src={props.image} alt={props.imageAlt}/>
-        </CardContainer>
+        </div>
     );
 };
 
