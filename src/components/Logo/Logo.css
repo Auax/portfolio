@@ -5,6 +5,7 @@
 .logo {
     /*margin-left: 118px;*/
     /*margin-top: 68px;*/
+    width: fit-content;
     font-family: "Maragsa", sans-serif;
     color: white;
     display: flex;

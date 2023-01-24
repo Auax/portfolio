@@ -1,26 +1,27 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {MenuContainer, MenuItem} from "./MenuStyles";
-import SelectedIcon from "./SelectedIcon";
+import React, {useState} from 'react';
+import styled from "styled-components";
+import DefaultMenu from "./DefaultMenu";
 
-const Menu = (props) => {
-    const options = ["Projects", "About me", "Contact"]
-    const [selectedIdx, setSelectedIdx] = useState(0);
-    const [height, setHeight] = useState(0)
-    const containerRef = useRef(null);
+const StyledMenu = styled(DefaultMenu)`
+  position: fixed;
+  left: 50px;
+  bottom: 30px;
+`;
 
-    useEffect(() => {
-        setHeight(containerRef.current.clientHeight);
-    });
+const Menu = () => {
+    const [selectedItem, setSelectedItem] = useState(0);
 
-    const render = options.map((option, idx) =>
-        <MenuItem disabled={idx !== selectedIdx}>{option}</MenuItem>
-    );
+    const items = {
+        "Home": "/",
+        "Projects": "/projects",
+        "Contact": "/contact",
+    };
 
     return (
-        <MenuContainer className={props.className} ref={containerRef}>
-            <SelectedIcon selected={selectedIdx} menuHeight={height} itemsCount={options.length}/>
-            {render}
-        </MenuContainer>
+        <StyledMenu
+            selected={selectedItem}
+            onChangeSelection={(i) => setSelectedItem(i)}
+            items={items}/>
     );
 };
 
