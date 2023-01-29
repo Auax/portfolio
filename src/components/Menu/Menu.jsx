@@ -12,9 +12,9 @@ const Menu = () => {
     const [selectedItem, setSelectedItem] = useState(0);
 
     const items = {
-        "Home": "/",
-        "Projects": "/projects",
-        "Contact": "/contact",
+        "Home": "home",
+        "Projects": "projects",
+        "Contact": "contact",
     };
 
     return (

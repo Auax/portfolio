@@ -1,7 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react';
 import SelectedIcon from "./SelectedIcon";
 import styled from "styled-components";
-import {Link} from "react-router-dom";
+import {Link as ScrollLink} from "react-scroll";
+import {useNavigate} from 'react-router-dom';
+import menu from "./Menu";
 
 export const MenuContainer = styled.div`
   display: flex;
@@ -15,7 +17,7 @@ export const MenuContainer = styled.div`
   }
 `;
 
-export const MenuItem = styled(Link)`
+export const MenuItem = styled(ScrollLink)`
   color: ${({disabled = false}) => disabled ? "rgba(255, 255, 255, 0.6)" : "white"};
   margin-left: ${({disabled = false}) => disabled ? "0" : "25px"};
   font-size: 2.5em;
@@ -34,23 +36,40 @@ const DefaultMenu = (props) => {
     const [selectedIndex, setSelectedIndex] = useState(props.selected || 0);
     const [menuHeight, setMenuHeight] = useState(0);
     const containerRef = useRef(null);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        let hash = window.location.hash;
+        hash = hash.substring(1, hash.length);
+        const menuObjectValues = Object.values(props.items);
+        console.log(menuObjectValues.indexOf(hash));
+        if (menuObjectValues.includes(hash)) {
+            const index = menuObjectValues.indexOf(hash);
+            setSelectedIndex(index);
+        }
+    }, []);
 
     // Set container height
     useEffect(() => setMenuHeight(containerRef.current.clientHeight), [props.items]);
 
-    const updateSelectedIdx = (idx) => {
+    const updateSelectedIdx = (url, idx) => {
+        navigate(`#${url}`);
         setSelectedIndex(idx);
         props?.onChangeSelection(idx);
     }
 
     // Render items
-    const render = Object.entries(props.items).map((option, idx) =>
+    const render = Object.entries(props.items).map(([name, url], idx) =>
         <MenuItem
-            to={option[1]}
             disabled={idx !== selectedIndex}
-            onClick={() => updateSelectedIdx(idx)}
-            key={idx}>
-            {option[0]}
+            onClick={() => updateSelectedIdx(url, idx)}
+            key={idx}
+            to={url}
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}>
+            {name}
         </MenuItem>
     );
 

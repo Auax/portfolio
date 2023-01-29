@@ -19,7 +19,7 @@ const ProjectContainer = styled.div`
 
 const Projects = () => {
     return (
-        <ProjectContainer>
+        <ProjectContainer name="projects" id="projects">
             <Card
                 title="Samurai"
                 description="AI generated image from prompt using Midjoruney"

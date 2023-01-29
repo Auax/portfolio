@@ -1,32 +1,22 @@
-import {Link} from "react-router-dom";
 import styled from "styled-components";
+import LogoImg from "../../resources/images/logo.png";
 
-const LogoContainer = styled(Link)`
-  position: relative;
+const LogoContainer = styled.div`
+  margin-left: auto;
+  margin-right: auto;
   width: fit-content;
-  font-family: "Maragsa", sans-serif;
-  display: flex;
-  flex-direction: column;
-  line-height: normal;
-  margin-top: -100px;
-  z-index: 10;
+  height: 100%;
+  pointer-events: none;
 `;
 
-const LogoTitle = styled.span`
-  font-size: 10em;
+const LogoImage = styled.img`
+  height: 100%;
 `;
-
-const LogoSubtitle = styled.span`
-  color: #8496ff;
-  font-size: 5em;
-  font-weight: 900;
-  margin-top: -0.5em;`;
 
 function Logo() {
     return (
-        <LogoContainer to="/">
-            <LogoTitle>Ibai Farina</LogoTitle>
-            <LogoSubtitle>イバイファリナ</LogoSubtitle>
+        <LogoContainer>
+            <LogoImage src={LogoImg}/>
         </LogoContainer>
     );
 }
