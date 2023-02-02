@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import {Subtitle, TitleBase} from "../components/UI/Texts";
-import Object3D from "../components/Object3D/Object3D";
-import {Link, animateScroll as scroll} from "react-scroll";
 import Navbar from "../components/Navbar";
 
 
@@ -9,7 +7,8 @@ const HeroContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: calc(100vh - var(--navbar-height));
+  height: 100vh;
+  //height: calc(100vh - var(--navbar-height));
   background: #000249;
   text-align: left;
   margin: 0;
@@ -26,9 +25,10 @@ const HeroContainer = styled.div`
 
 const HeroTitle = styled.h1`
   ${TitleBase};
-  margin-top: 30px;
-  font-size: 3em;
+  margin-top: calc(var(--navbar-height) + 30px);
+  font-size: 8em;
 
+  
   @media (max-width: 1536px) {
     font-size: 5em;
   }
@@ -39,9 +39,11 @@ const HeroTitle = styled.h1`
 `;
 
 const HeroSubtitle = styled(Subtitle)`
-  font-size: .8em;
-  width: 50%;
-
+  font-size: 4em;
+  //width: 50%;
+  text-shadow: 0 10px 10px rgba(0, 0, 0, 0.12);
+  
+  
   @media (max-width: 1536px) {
     width: 60%;
   }
@@ -51,11 +53,11 @@ const HeroSubtitle = styled(Subtitle)`
   }`;
 
 const CanvasContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 0;
+  //width: 100%;
+  //height: 100%;
+  //top: 0;
+  //left: 0;
+  //z-index: 0;
 `;
 
 const Home = () => {
@@ -64,14 +66,18 @@ const Home = () => {
         <div id="home" name="home">
             <Navbar/>
             <HeroContainer>
-                <div>
-                    <HeroTitle>Hi! I'm a React dev.</HeroTitle>
-                    <HeroSubtitle>Welcome to this personal portfolio project, where I showcase some of my
-                        projects.
-                    </HeroSubtitle>
+                <div className="text-center">
+                    {/*<HeroSubtitle>Web Developer</HeroSubtitle>*/}
+                    <HeroTitle>Ibai Farina</HeroTitle>
+                    <HeroSubtitle>イバイファリナ</HeroSubtitle>
                 </div>
                 <CanvasContainer>
-                    <Object3D/>
+                    <img
+                        className="m-14 rounded shadow-2xl mx-auto"
+                        alt="hero"
+                        width="600px"
+                        src="https://images.pexels.com/photos/248195/pexels-photo-248195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
+                    {/*    <Scene/>*/}
                 </CanvasContainer>
             </HeroContainer>
         </div>

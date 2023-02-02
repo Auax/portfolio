@@ -55,7 +55,6 @@ export const Subtitle = styled.p`
   ${props => props.align ? `text-align: ${props.align}` : ""};
   color: rgba(255, 255, 255, 0.6);
   font-size: 1.25em;
-  margin-top: 0.5em;
 
   @media (max-width: 1536px) {
     font-size: 1em;
