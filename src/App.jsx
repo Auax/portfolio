@@ -10,6 +10,7 @@ import Projects from "./views/Projects/Projects";
 import Menu from "./components/Menu/Menu";
 import Navbar from "./components/Navbar";
 import {Link} from "react-scroll";
+import Navigator from "./components/Navigator";
 //
 // const Layout = () => {
 //     return (
@@ -37,9 +38,7 @@ const router = createBrowserRouter(
         <Route>
             <Route path="/" element={
                 <>
-                    <Menu/>
-                    <Home/>
-                    <Projects/>
+                    <Navigator/>
                 </>}
             />
             <Route path="/projects" element={<Projects/>}/>

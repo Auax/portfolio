@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import sampleImage1 from "../../resources/images/sample_img_1.png";
 import Card from "../../components/Card/Card";
+import VisibilitySensor from "react-visibility-sensor";
 
 const ProjectContainer = styled.div`
   display: flex;
@@ -17,7 +18,7 @@ const ProjectContainer = styled.div`
   }
 `;
 
-const Projects = () => {
+const Projects = (props) => {
     return (
         <ProjectContainer name="projects" id="projects">
             <Card
