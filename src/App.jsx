@@ -8,38 +8,31 @@ import {
 import Home from "./views/Home";
 import Projects from "./views/Projects/Projects";
 import Menu from "./components/Menu/Menu";
-import Navbar from "./components/Navbar";
-import {Link} from "react-scroll";
-import Navigator from "./components/Navigator";
-//
-// const Layout = () => {
-//     return (
-//         <>
-//             <Menu/>
-//             <Outlet/>
-//         </>
-//     )
-// };
-//
-//
-// const router = createBrowserRouter(
-//     createRoutesFromElements(
-//         <Route element={<Layout/>}>
-//             <Route path="/" element={<Home/>}/>
-//             <Route path="/projects" element={<Projects/>}/>
-//             {/*<Route path="503" element={<ServiceUnavailable/>}/>*/}
-//             {/*<Route path="*" element={<NotFoundPage/>}/>*/}
-//         </Route>
-//     )
-// );
+import styled from "styled-components";
+
+const menuItems = [
+    {label: 'Home', section: 'home'},
+    {label: 'Projects', section: 'projects'},
+    {label: 'Contact', section: 'contact'},
+];
+
+const StyledMenu = styled(Menu)`
+  position: fixed;
+  left: 50px;
+  bottom: 30px;
+`;
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route>
             <Route path="/" element={
                 <>
-                    <Navigator/>
-                </>}
+                    <StyledMenu
+                        items={menuItems}/>
+                    <Home/>
+                    <Projects/>
+                </>
+            }
             />
             <Route path="/projects" element={<Projects/>}/>
             {/*<Route path="503" element={<ServiceUnavailable/>}/>*/}

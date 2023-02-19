@@ -3,7 +3,7 @@ import SelectedIcon from "./SelectedIcon";
 import styled from "styled-components";
 import {Link as ScrollLink} from "react-scroll";
 import {useNavigate} from 'react-router-dom';
-import menu from "./Menu";
+import {motion} from "framer-motion";
 
 export const MenuContainer = styled.div`
   display: flex;
@@ -17,12 +17,11 @@ export const MenuContainer = styled.div`
   }
 `;
 
-export const MenuItem = styled(ScrollLink)`
-  color: ${({disabled = false}) => disabled ? "rgba(255, 255, 255, 0.6)" : "white"};
-  margin-left: ${({disabled = false}) => disabled ? "0" : "25px"};
+export const MenuLink = styled(ScrollLink)`
+  color: ${({$active = true}) => $active ? "#fff" : "rgba(255, 255, 255, 0.6)"};
   font-size: 2.5em;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 500;
   font-stretch: expanded;
   cursor: pointer;
   transition: color 0.2s ease-in-out, margin-left 0.3s ease-in-out;
@@ -33,62 +32,61 @@ export const MenuItem = styled(ScrollLink)`
 `;
 
 const Menu = (props) => {
-    const [selectedIndex, setSelectedIndex] = useState(props.selected || 0);
+    const [sectionIndex, setSectionIndex] = useState(props.selected || 0);
     const [menuHeight, setMenuHeight] = useState(0);
     const containerRef = useRef(null);
     const navigate = useNavigate();
-    //
-    // useEffect(() => {
-    //     let hash = window.location.hash;
-    //     hash = hash.substring(1, hash.length);
-    //     const menuObjectValues = Object.values(props.items);
-    //     if (menuObjectValues.includes(hash)) {
-    //         const index = menuObjectValues.indexOf(hash);
-    //         console.log(index);
-    //         setSelectedIndex(index);
-    //     }
-    // }, []);
 
     // Set container height
     useEffect(() =>
         setMenuHeight(containerRef.current.clientHeight), [props.items]
     );
 
-    // Update selected value when updating props
-    useEffect(() => {
-        const selectedName = props.items[props.selected].id;
-        updateSelectedIdx(selectedName, props.selected)
-    }, [props.selected]);
-
     // Update selected value
-    const updateSelectedIdx = (url, idx) => {
-        navigate(`#${url}`);
-        setSelectedIndex(idx);
-        props?.onChangeSelection(idx);
+    const updateSection = (section, idx) => {
+        if (section === undefined) return;
+        navigate(`#${section}`);
+        setSectionIndex(idx);
     }
 
     // Render items
-    const render = props.items.map((item, idx) =>
-        <MenuItem
-            disabled={idx !== selectedIndex}
-            onClick={() => updateSelectedIdx(item.id, idx)}
-            key={idx}
-            to={item.id}
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}>
-            {item.name}
-        </MenuItem>
+    const render = props.items.map((item, index) => {
+            const isSelected = index === sectionIndex;
+            return (
+                <motion.div animate={
+                    {
+                        // x: isSelected ? 30 : -30,
+                        rotate: isSelected ? -5 : 5,
+                        color: isSelected ? "#fff" : "#b6b6b6",
+                        textShadow: isSelected ? "0 0 10px rgba(255, 255, 255, 0.2)" : "0",
+                        scale: isSelected ? 1 : .8,
+                        transition: {duration: .3}
+                    }
+                }>
+                    <MenuLink
+                        $active={index === sectionIndex}
+                        onSetActive={() => updateSection(item.section, index)}
+                        onClick={() => updateSection(item.section, index)}
+                        key={index}
+                        to={item.section}
+                        spy={true}
+                        smooth={true}
+                        offset={0}
+                        duration={500}>
+                        {item.label}
+                    </MenuLink>
+                </motion.div>
+            )
+        }
     );
 
     return (
         <MenuContainer className={props.className} ref={containerRef}>
-            <SelectedIcon
-                selected={selectedIndex}
-                menuHeight={menuHeight}
-                itemsCount={props.items.length}
-            />
+            {/*<SelectedIcon*/}
+            {/*    selected={sectionIndex}*/}
+            {/*    menuHeight={menuHeight}*/}
+            {/*    itemsCount={props.items.length}*/}
+            {/*/>*/}
             {render}
         </MenuContainer>
     );

@@ -1,12 +1,11 @@
 import React, {useEffect, useRef, useState} from 'react';
 import StarIcon from "../../resources/images/StarIcon.svg";
+import {motion} from "framer-motion";
 import styled from "styled-components";
 
 export const IconImg = styled.img`
   width: 15px;
   position: absolute;
-  transform: ${({offset}) => `translateY(${offset || 30}px)`};
-  transition: ${({useTransition = false}) => useTransition ? "transform" : "none"} 0.3s ease-in-out;
 `;
 
 const SelectedIcon = (props) => {
@@ -30,7 +29,12 @@ const SelectedIcon = (props) => {
 
     return (
         <div>
-            <IconImg src={StarIcon} alt="selected icon" offset={topOffset} useTransition={useTransition}/>
+            <motion.div animate={{
+                y: topOffset,
+                transition: {duration: .3}
+            }}>
+                <IconImg src={StarIcon} alt="selected icon" useTransition={useTransition}/>
+            </motion.div>
         </div>
     );
 };

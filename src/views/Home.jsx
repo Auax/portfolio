@@ -1,15 +1,13 @@
 import styled from "styled-components";
 import {Subtitle, TitleBase} from "../components/UI/Texts";
 import Navbar from "../components/Navbar";
-import VisibilitySensor from "react-visibility-sensor";
 
 
 const HeroContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
-  //height: calc(100vh - var(--navbar-height));
+  height: calc(100vh - var(--navbar-height));
   background: #000249;
   text-align: left;
   margin: 0;
@@ -43,42 +41,21 @@ const HeroSubtitle = styled(Subtitle)`
   font-size: 4em;
   //width: 50%;
   text-shadow: 0 10px 10px rgba(0, 0, 0, 0.12);
-
-
-  @media (max-width: 1536px) {
-    width: 60%;
-  }
-
-  @media (max-width: 700px) {
-    width: 80%;
-  }`;
-
-const CanvasContainer = styled.div`
-  //width: 100%;
-  //height: 100%;
-  //top: 0;
-  //left: 0;
-  //z-index: 0;
 `;
 
-const Home = (props) => {
 
+const Home = () => {
     return (
-        <HeroContainer id="home" name="home">
-            <div className="text-center">
-                {/*<HeroSubtitle>Web Developer</HeroSubtitle>*/}
-                <HeroTitle>Ibai Farina</HeroTitle>
-                <HeroSubtitle>イバイファリナ</HeroSubtitle>
-            </div>
-            <CanvasContainer>
-                <img
-                    className="m-14 rounded shadow-2xl mx-auto"
-                    alt="hero"
-                    width="600px"
-                    src="https://images.pexels.com/photos/248195/pexels-photo-248195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
-                {/*    <Scene/>*/}
-            </CanvasContainer>
-        </HeroContainer>
+        <div id="home" name="home">
+            <Navbar/>
+            <HeroContainer>
+                <div className="text-center b">
+                    <HeroTitle>Ibai Farina</HeroTitle>
+                    <HeroSubtitle>イバイファリナ</HeroSubtitle>
+                </div>
+            </HeroContainer>
+        </div>
+
     );
 };
 
