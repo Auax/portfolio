@@ -57,10 +57,10 @@ const Card = (props) => {
             <CardTitle>{props.title}</CardTitle>
             <CardDescription>{props.description}</CardDescription>
             {/*<a href={props.repository}>More</a>*/}
-            <Overlay>
-                <span className="overlayText">More!</span>
-                <CardImage src={props.image} alt={props.imageAlt}/>
-            </Overlay>
+            <CardImage src={props.image} alt={props.imageAlt}/>
+            {/*<Overlay>*/}
+            {/*    <span className="overlayText">More!</span>*/}
+            {/*</Overlay>*/}
         </div>
     );
 };
