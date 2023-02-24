@@ -1,6 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {motion, useAnimation} from "framer-motion";
 import styled from "styled-components";
 import {Subtitle, SubtitleBase, TitleBase, TitleH2} from "../UI/Texts";
+import {BsArrowsFullscreen} from "react-icons/bs";
+import {useInView} from "react-intersection-observer";
 
 const CardTitle = styled.h3`
   font-size: 2em;
@@ -22,46 +25,44 @@ const CardImage = styled.img`
 
 `;
 
-const Overlay = styled.div`
-  position: relative;
-  cursor: pointer;
-
-  & * {
-    transition: all 0.2s ease-in-out;
-  }
-
-  &:hover img {
-    filter: brightness(.6);
-  }
-
-  & .overlayText {
-    position: absolute;
-    z-index: 3;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: 800;
-    font-size: 2em;
-    opacity: 0;
-  }
-
-  &:hover > .overlayText {
-    opacity: 1;
-  }
-`;
-
 const Card = (props) => {
 
+    // Animations
+    const controls = useAnimation();
+    const [ref, inView] = useInView();
+
+    useEffect(() => {
+        controls.start(inView ? "visible" : "hidden");
+    }, [controls, inView]);
+
+    const ProjectVariants = {
+        visible: {opacity: 1, scale: 1, transition: {duration: 1}},
+        hidden: {opacity: 0, scale: .9}
+    };
+
+    const ItemVariants = {
+        visible: {y: 0, transition: {duration: 1.3}},
+        hidden: {y: -30, fontStretch: 30}
+    }
+
     return (
-        <div className={props.className}>
-            <CardTitle>{props.title}</CardTitle>
+        <motion.div
+            className={props.className}
+            ref={ref}
+            animate={controls}
+            initial="hidden"
+            variants={ProjectVariants}>
+            <motion.div variants={ItemVariants}><CardTitle>{props.title}</CardTitle></motion.div>
             <CardDescription>{props.description}</CardDescription>
-            {/*<a href={props.repository}>More</a>*/}
             <CardImage src={props.image} alt={props.imageAlt}/>
-            {/*<Overlay>*/}
-            {/*    <span className="overlayText">More!</span>*/}
-            {/*</Overlay>*/}
-        </div>
+            <motion.div variants={ItemVariants}>
+                <button className="rounded-lg mt-2 float-right flex opacity-80 hover:opacity-100"
+                        onClick={props.onClick}>Expanded view <BsArrowsFullscreen className="mt-1 ml-2"/>
+                </button>
+            </motion.div>
+
+        </motion.div>
+
     );
 };
 

@@ -4,7 +4,7 @@ export const MusicQuizDescription = (
             This project is a music quiz that allows users to select a premade playlist or use their own Spotify
             playlist to play.
         </p>
-        <br />
+        <br/>
         <p>
             The technologies used for the project are:
         </p>
@@ -14,9 +14,8 @@ export const MusicQuizDescription = (
         </ul>
         <p>
             Express is used to fetch all the playlists from the <b>Firebase Database</b>, then using the <b>Spotify
-                API</b>, we fetch the songs to play.
+            API</b>, we fetch the songs to play.
         </p>
-
-        <a href="#" className="btn">GitHub</a>
+        <a href="https://github.com/Auax/auax-music-quiz" target="_blank" className="btn inline-block mt-2">GitHub</a>
     </>
 )
