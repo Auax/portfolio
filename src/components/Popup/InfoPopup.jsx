@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 import { SubtitleBase, TitleBase } from "../UI/Texts";
 import { MdOutlineClose } from 'react-icons/md';
 
 
 const Container = styled.div`
+  display: ${({ $open }) => $open ? "block" : "none"};
   position: fixed;
   width: 50vw;
   height: 100vh;
@@ -28,7 +29,7 @@ const Description = styled.div`
   }
 `;
 
-const CloseIconContainer = styled.span`
+const CloseIconContainer = styled.button`
   font-size: 2em;
   color: white;
   position: absolute;
@@ -37,9 +38,10 @@ const CloseIconContainer = styled.span`
   `;
 
 const InfoPopup = (props) => {
+  const [isOpen, setIsOpen] = useState(true);
   return (
-    <Container>
-      <CloseIconContainer>
+    <Container $open={isOpen}>
+      <CloseIconContainer onClick={() => setIsOpen(false)}>
         <MdOutlineClose />
       </CloseIconContainer>
       <Title>
