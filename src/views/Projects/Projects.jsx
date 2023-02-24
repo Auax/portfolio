@@ -48,7 +48,8 @@ const Projects = () => {
     return (
 
         <ProjectContainer name="projects" id="projects">
-            {projects.map(item => <>
+            {projects.map(item => 
+            <div key={item.title}>
                 <motion.div
                     ref={ref}
                     animate={controls}
@@ -58,7 +59,8 @@ const Projects = () => {
                           repository={item.repo}/>
                 </motion.div>
                 <InfoPopup title={item.title} description={item.description}/>
-            </>)}
+            </div>
+            )}
         </ProjectContainer>
 
     );

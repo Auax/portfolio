@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
-import {SubtitleBase, TitleBase} from "../UI/Texts";
+import { SubtitleBase, TitleBase } from "../UI/Texts";
+import { MdOutlineClose } from 'react-icons/md';
+
 
 const Container = styled.div`
   position: fixed;
@@ -26,20 +28,28 @@ const Description = styled.div`
   }
 `;
 
-// const CloseIcon = styled()
+const CloseIconContainer = styled.span`
+  font-size: 2em;
+  color: white;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  `;
 
 const InfoPopup = (props) => {
-    return (
-        <Container>
-            {/*<CloseIcon></CloseIcon>*/}
-            <Title>
-                {props.title}
-            </Title>
-            <Description>
-                {props.description}
-            </Description>
-        </Container>
-    );
+  return (
+    <Container>
+      <CloseIconContainer>
+        <MdOutlineClose />
+      </CloseIconContainer>
+      <Title>
+        {props.title}
+      </Title>
+      <Description>
+        {props.description}
+      </Description>
+    </Container>
+  );
 };
 
 export default InfoPopup;
