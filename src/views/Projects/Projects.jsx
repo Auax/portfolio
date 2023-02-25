@@ -27,7 +27,7 @@ const Projects = () => {
 
 
     return (
-        <div>
+        <div name="projects" id="projects">
             {projects.map(item =>
                 <Project project={item} key={item.title}/>
             )}

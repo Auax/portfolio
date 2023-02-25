@@ -18,6 +18,7 @@ const menuItems = [
 
 const StyledMenu = styled(Menu)`
   position: fixed;
+  z-index: 10;
   left: 50px;
   bottom: 30px;
 `;
@@ -27,8 +28,7 @@ const router = createBrowserRouter(
         <Route>
             <Route path="/" element={
                 <>
-                    <StyledMenu
-                        items={menuItems}/>
+                    <StyledMenu items={menuItems}/>
                     <Home/>
                     <Projects/>
                 </>

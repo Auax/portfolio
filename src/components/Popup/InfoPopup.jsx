@@ -1,20 +1,32 @@
 import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
-import {SubtitleBase, TitleBase} from "../UI/Texts";
 import {MdOutlineClose} from 'react-icons/md';
 import {motion, useAnimation} from "framer-motion";
+import {TitleBase} from "../UI/Texts";
 
+const Background = motion(styled.div`
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  display: none;
+  z-index: 8;
+  cursor: pointer;
+`);
 
 const Container = motion(styled.div`
   position: fixed;
   width: 60vw;
   height: 100vh;
   left: -20px;
-  z-index: 10;
   bottom: 0;
   background: rgb(0, 0, 0);
   padding: 100px 60px;
   box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 `);
 
 const Title = styled.h1`
@@ -39,15 +51,18 @@ const CloseIconContainer = styled.button`
 
 const InfoPopup = (props) => {
     const [isOpen, setIsOpen] = useState(props.isOpen);
+    const closePopup = () => setIsOpen(false);
 
     // Animations
     const controls = useAnimation();
 
+    // Animate opening animation for popup
     useEffect(() => {
         controls.start(isOpen ? "visible" : "hidden");
         props.onUpdate(isOpen);
     }, [isOpen]);
 
+    // Update isOpen state when the prop is changed
     useEffect(() => setIsOpen(props.isOpen), [props.isOpen])
 
     const PopupVariants = {
@@ -63,20 +78,38 @@ const InfoPopup = (props) => {
         }
     };
 
+    const BackgroundVariants = {
+        visible: {
+            display: "initial",
+            opacity: 1,
+        },
+        hidden: {
+            opacity: 0,
+            transitionEnd: {
+                display: "none"
+            }
+        }
+    };
+
 
     return (
-        <Container
-            animate={controls}
-            initial="hidden"
-            variants={PopupVariants}>
-            <CloseIconContainer onClick={() => setIsOpen(false)}>
-                <MdOutlineClose/>
-            </CloseIconContainer>
-            <Title>{props.title}</Title>
-            <Description>
-                {props.description}
-            </Description>
-        </Container>
+        <>
+            <Container
+                animate={controls}
+                initial="hidden"
+                variants={PopupVariants}>
+                <CloseIconContainer onClick={closePopup}>
+                    <MdOutlineClose/>
+                </CloseIconContainer>
+                <Title>{props.title}</Title>
+                <Description>{props.description}</Description>
+            </Container>
+            <Background
+                onClick={closePopup}
+                animate={controls}
+                initial="hidden"
+                variants={BackgroundVariants}/>
+        </>
     );
 };
 

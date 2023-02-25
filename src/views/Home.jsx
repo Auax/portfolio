@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import {Subtitle, TitleBase} from "../components/UI/Texts";
-import Navbar from "../components/Navbar";
 
 
 const HeroContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: calc(100vh - var(--navbar-height));
+  height: calc(60vh);
   background: #000249;
   text-align: left;
   margin: 0;
@@ -47,7 +46,6 @@ const HeroSubtitle = styled(Subtitle)`
 const Home = () => {
     return (
         <div id="home" name="home">
-            <Navbar/>
             <HeroContainer>
                 <div className="text-center b">
                     <HeroTitle>Ibai Farina</HeroTitle>

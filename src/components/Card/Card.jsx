@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react';
 import {motion, useAnimation} from "framer-motion";
 import styled from "styled-components";
-import {Subtitle, SubtitleBase, TitleBase, TitleH2} from "../UI/Texts";
 import {BsArrowsFullscreen} from "react-icons/bs";
 import {useInView} from "react-intersection-observer";
+import {SubtitleBase, TitleBase} from "../UI/Texts";
 
 const CardTitle = styled.h3`
-  font-size: 2em;
-  ${TitleBase}
+  ${TitleBase};
+  font-size: 3em;
 `;
 
 const CardDescription = styled.p`
@@ -18,21 +18,18 @@ const CardDescription = styled.p`
 `;
 
 const CardImage = styled.img`
-  z-index: 2;
   position: relative;
   margin-top: 5px;
   border-radius: 10px;
-
 `;
 
 const Card = (props) => {
-
-    // Animations
     const controls = useAnimation();
     const [ref, inView] = useInView();
 
+    // Make the card appear when it's visible
     useEffect(() => {
-        controls.start(inView ? "visible" : "hidden");
+        if (inView) controls.start("visible");
     }, [controls, inView]);
 
     const ProjectVariants = {
@@ -52,7 +49,9 @@ const Card = (props) => {
             animate={controls}
             initial="hidden"
             variants={ProjectVariants}>
-            <motion.div variants={ItemVariants}><CardTitle>{props.title}</CardTitle></motion.div>
+            <motion.div variants={ItemVariants}>
+                <CardTitle>{props.title}</CardTitle>
+            </motion.div>
             <CardDescription>{props.description}</CardDescription>
             <CardImage src={props.image} alt={props.imageAlt}/>
             <motion.div variants={ItemVariants}>
@@ -60,9 +59,7 @@ const Card = (props) => {
                         onClick={props.onClick}>Expanded view <BsArrowsFullscreen className="mt-1 ml-2"/>
                 </button>
             </motion.div>
-
         </motion.div>
-
     );
 };
 

@@ -1,9 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import {motion, useAnimation} from "framer-motion";
+import React, {useState} from 'react';
 import Card from "../Card/Card";
 import InfoPopup from "../Popup/InfoPopup";
 import styled from "styled-components";
-import {useInView} from "react-intersection-observer";
 
 const ProjectContainer = styled.div`
   display: flex;
@@ -13,20 +11,13 @@ const ProjectContainer = styled.div`
   gap: 4em;
   grid-column: 2;
   padding: 4em;
-
-  & {
-    max-width: 50%;
-  }
 `;
 
 const Project = (props) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-
     return (
         <div>
-            <ProjectContainer name="projects" id="projects">
-
+            <ProjectContainer className="sm:w-1/2 md:w-3/4 lg:w-1/2 w-full">
                 <Card title={props.project.title}
                       description={props.project.caption}
                       image={props.project.img}
