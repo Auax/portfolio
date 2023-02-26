@@ -19,6 +19,7 @@ const Background = motion(styled.div`
 
 const Container = motion(styled.div`
   position: fixed;
+  overflow-y: scroll;
   width: 60vw;
   height: 100vh;
   left: -20px;
@@ -27,12 +28,25 @@ const Container = motion(styled.div`
   padding: 100px 60px;
   box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
   z-index: 10;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+  }
 `);
 
 const Title = styled.h1`
   ${TitleBase};
   font-weight: 800;
   font-size: 4em;
+
+  @media (max-width: 1024px) {
+    font-size: 3em;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 3em;
+  }
 `;
 
 const Description = styled.div`
@@ -72,9 +86,9 @@ const InfoPopup = (props) => {
             transition: {type: "spring", bounce: 0}
         },
         hidden: {
-            opacity: 1,
+            opacity: 0,
             x: "-100%",
-            transition: {type: "spring", bounce: 0}
+            transition: {type: "spring", bounce: 0},
         }
     };
 

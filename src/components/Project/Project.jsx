@@ -10,14 +10,13 @@ const ProjectContainer = styled.div`
   margin-right: auto;
   gap: 4em;
   grid-column: 2;
-  padding: 4em;
 `;
 
 const Project = (props) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     return (
         <div>
-            <ProjectContainer className="sm:w-1/2 md:w-3/4 lg:w-1/2 w-full">
+            <ProjectContainer className="p-10 md:p-20 md:w-3/4 lg:w-2/3 2xl:w-1/2 w-full">
                 <Card title={props.project.title}
                       description={props.project.caption}
                       image={props.project.img}

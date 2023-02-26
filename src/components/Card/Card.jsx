@@ -8,6 +8,10 @@ import {SubtitleBase, TitleBase} from "../UI/Texts";
 const CardTitle = styled.h3`
   ${TitleBase};
   font-size: 3em;
+
+  @media (max-width: 700px) {
+    font-size: 2em;
+  }
 `;
 
 const CardDescription = styled.p`

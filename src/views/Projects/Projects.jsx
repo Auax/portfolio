@@ -2,7 +2,7 @@ import React from 'react';
 import musicquizImg from "../../resources/images/musicquiz.jpg";
 import discordrpcImg from "../../resources/images/discordrpc.jpg";
 
-import {MusicQuizDescription} from "./ProjectItems";
+import {MusicQuizDescription, RpcDescription} from "./ProjectItems";
 import Project from "../../components/Project/Project";
 
 
@@ -19,7 +19,7 @@ const Projects = () => {
         {
             title: "Discord RPC",
             caption: "Create your customized Discord status with this simple yet effective application.",
-            description: MusicQuizDescription,
+            description: RpcDescription,
             img: discordrpcImg,
             repo: "https://github.com/Auax/auax-music-quiz"
         },

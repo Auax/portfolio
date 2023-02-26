@@ -40,6 +40,22 @@ const MenuLink = styled(ScrollLink)`
   }
 `;
 
+const MenuMobileOverlay = motion(styled.div`
+  display: none;
+
+  @media (max-width: 1024px) {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    background: linear-gradient(to top, #000307, rgba(0, 0, 0, 80%) 60%, rgba(0, 0, 0, 0));
+  }
+`);
+
 const Menu = (props) => {
     const [isOpen, setIsOpen] = useState(false);
     // State for currently selected section index
@@ -107,6 +123,17 @@ const Menu = (props) => {
         }
     };
 
+    const mobileOverlayVariants = {
+        visible: {
+            display: "block",
+            opacity: 1,
+        },
+        hidden: {
+            opacity: 0,
+            transitionEnd: {display: "none"},
+        }
+    };
+
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
@@ -127,7 +154,7 @@ const Menu = (props) => {
                     animate={{
                         x: isSelected ? 30 : -30,
                         color: isSelected ? "#fff" : "#b6b6b6",
-                        textShadow: isSelected ? "0 0 10px rgba(255, 255, 255, 0.2)" : "0",
+                        // textShadow: isSelected ? "0 0 10px rgba(255, 255, 255, 0.2)" : "0",
                         scale: isSelected ? 1 : .9,
                         transition: {duration: .3}
                     }}>
@@ -181,7 +208,11 @@ const Menu = (props) => {
                 animate={controls}>
                 <MenuIcon onClick={toggleMenu}/>
             </motion.div>
-
+            <MenuMobileOverlay
+                onClick={() => setIsOpen(false)}
+                variants={mobileOverlayVariants}
+                initial="hidden"
+                animate={controls}/>
         </div>
     );
 };
