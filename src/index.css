@@ -52,3 +52,18 @@ code {
 .btn:hover {
     background: #c0c0c0;
 }
+
+.btn-secondary {
+    padding: 5px 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    border-radius: 5px;
+    transition: all 0.1s ease-in-out;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: black;
+}

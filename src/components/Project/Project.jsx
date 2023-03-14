@@ -20,11 +20,12 @@ const Project = (props) => {
                 <Card title={props.project.title}
                       description={props.project.caption}
                       image={props.project.img}
-                      repository={props.project.repo}
+                      repo={props.project.repo}
                       onClick={() => setIsPopupOpen(!isPopupOpen)}
                 />
                 <InfoPopup title={props.project.title}
                            description={props.project.description}
+                           repo={props.project.repo}
                            isOpen={isPopupOpen}
                            onUpdate={(v) => setIsPopupOpen(v)}
                 />

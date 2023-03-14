@@ -41,9 +41,14 @@ const Card = (props) => {
         hidden: {opacity: 0, scale: .9}
     };
 
-    const ItemVariants = {
+    const TitleVariants = {
         visible: {y: 0, transition: {duration: 1.3}},
-        hidden: {y: -30, fontStretch: 30}
+        hidden: {y: -15, fontStretch: 30}
+    }
+
+    const BottomVariants = {
+        visible: {y: 0, transition: {duration: 1.3}},
+        hidden: {y: 15, fontStretch: 30}
     }
 
     return (
@@ -53,16 +58,22 @@ const Card = (props) => {
             animate={controls}
             initial="hidden"
             variants={ProjectVariants}>
-            <motion.div variants={ItemVariants}>
-                <CardTitle>{props.title}</CardTitle>
+            <motion.div variants={TitleVariants}>
+                <a href={props.repo} target="_blank"><CardTitle
+                    className="hover:text-neutral-400">{props.title}</CardTitle></a>
             </motion.div>
             <CardDescription>{props.description}</CardDescription>
-            <CardImage src={props.image} alt={props.imageAlt}/>
-            <motion.div variants={ItemVariants}>
-                <button className="rounded-lg mt-2 float-right flex opacity-80 hover:opacity-100"
-                        onClick={props.onClick}>Expanded view <BsArrowsFullscreen className="mt-1 ml-2"/>
-                </button>
-            </motion.div>
+            <div className="flex items-center justify-between mt-2">
+                <motion.div variants={BottomVariants}>
+                    <a href={props.repo} target="_blank"
+                       className="btn-secondary inline-block">GitHub</a>
+                </motion.div>
+                <motion.div variants={BottomVariants} className="float-right">
+                    <button className="rounded-lg flex opacity-80 hover:opacity-100"
+                            onClick={props.onClick}>Expanded view <BsArrowsFullscreen className="mt-1 ml-2"/>
+                    </button>
+                </motion.div>
+            </div>
         </motion.div>
     );
 };

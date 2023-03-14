@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {MdOutlineClose} from 'react-icons/md';
 import {motion, useAnimation} from "framer-motion";
 import {TitleBase} from "../UI/Texts";
+import ReactMarkdown from 'react-markdown';
 
 const Background = motion(styled.div`
   top: 0;
@@ -63,6 +64,52 @@ const CloseIconContainer = styled.button`
   top: 10px;
 `;
 
+const MarkdownStyler = styled.div`
+  h1, h2, h3, h4 {
+    margin-bottom: 5px;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1em;
+    margin-bottom: 10px;
+    font-stretch: semi-expanded;
+  }
+
+  em, b {
+    font-weight: bold;
+  }
+
+  ul {
+    margin-top: -12px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+    color: rgba(255, 255, 255, 0.8);
+    list-style-type: initial;
+  }
+
+  a {
+    color: #4470ff;
+  }
+
+  img {
+    border-radius: 5px;
+  }
+  
+  code {
+    background: black;
+    padding: 2px 5px;
+    border-radius: 5px;
+  }
+`;
+
 const InfoPopup = (props) => {
     const [isOpen, setIsOpen] = useState(props.isOpen);
     const closePopup = () => setIsOpen(false);
@@ -104,8 +151,6 @@ const InfoPopup = (props) => {
             }
         }
     };
-
-
     return (
         <>
             <Container
@@ -116,7 +161,14 @@ const InfoPopup = (props) => {
                     <MdOutlineClose/>
                 </CloseIconContainer>
                 <Title>{props.title}</Title>
-                <Description>{props.description}</Description>
+
+                <MarkdownStyler>
+                    <ReactMarkdown linkTarget="_blank">
+                        {props.description}
+                    </ReactMarkdown>
+                </MarkdownStyler>
+                <a href={props.repo} target="_blank"
+                   className="btn inline-block">GitHub</a>
             </Container>
             <Background
                 onClick={closePopup}
