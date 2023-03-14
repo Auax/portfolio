@@ -59,21 +59,15 @@ const Card = (props) => {
             initial="hidden"
             variants={ProjectVariants}>
             <motion.div variants={TitleVariants}>
-                <a href={props.repo} target="_blank"><CardTitle
-                    className="hover:text-neutral-400">{props.title}</CardTitle></a>
+                <a href={props.repo} target="_blank">
+                    <CardTitle className="hover:text-neutral-400">{props.title}</CardTitle></a>
             </motion.div>
             <CardDescription>{props.description}</CardDescription>
-            <div className="flex items-center justify-between mt-2">
-                <motion.div variants={BottomVariants}>
-                    <a href={props.repo} target="_blank"
-                       className="btn-secondary inline-block">GitHub</a>
-                </motion.div>
-                <motion.div variants={BottomVariants} className="float-right">
-                    <button className="rounded-lg flex opacity-80 hover:opacity-100"
-                            onClick={props.onClick}>Expanded view <BsArrowsFullscreen className="mt-1 ml-2"/>
-                    </button>
-                </motion.div>
-            </div>
+            <motion.div variants={BottomVariants}>
+                <button className="rounded-lg flex text-neutral-300 hover:opacity-100 mt-2"
+                        onClick={props.onClick}>Expanded view <BsArrowsFullscreen className="mt-1 ml-2"/>
+                </button>
+            </motion.div>
         </motion.div>
     );
 };

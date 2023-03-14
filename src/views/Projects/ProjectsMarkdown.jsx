@@ -43,7 +43,7 @@ Check the full documentation in the GitHub Repository.
 `;
 
 export const PassaxMD = `
-# Overview
+## Overview
 This is a **Python 3** library to retrieve Chrome-based browser's saved login info for **only educational purposes**.
 Passax will detect different browsers installed (Chrome, Brave or Opera), find the database storing all the login data and
 decrypt the data. 

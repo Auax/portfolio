@@ -5,6 +5,7 @@ import passaxImg from "../../resources/images/passax.jpg";
 
 import {MusicQuizMD, RpcMD, PassaxMD} from "./ProjectsMarkdown";
 import Project from "../../components/Project/Project";
+import {TitleH1} from "../../components/UI/Texts";
 
 
 const Projects = () => {
@@ -34,7 +35,8 @@ const Projects = () => {
 
 
     return (
-        <div name="projects" id="projects">
+        <div name="projects" id="projects" className="md:w-3/4 lg:w-2/3 2xl:w-1/2 w-full mx-auto px-10 md:px-20">
+            <TitleH1 className="my-10 text-center">Projects</TitleH1>
             {projects.map(item =>
                 <Project project={item} key={item.title}/>
             )}

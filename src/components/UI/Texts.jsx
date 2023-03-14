@@ -9,7 +9,6 @@ export const TitleBase = css`
 
 export const TitleH1 = styled.h1`
   ${TitleBase};
-  margin-top: 100px;
   font-size: 5em;
 
   @media (max-width: 1536px) {

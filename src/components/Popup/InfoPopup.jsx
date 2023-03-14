@@ -32,6 +32,7 @@ const Container = motion(styled.div`
 
   @media (max-width: 1024px) {
     width: 100%;
+    text-align: justify;
     background: rgba(0, 0, 0, 0.8);
   }
 `);
@@ -50,11 +51,6 @@ const Title = styled.h1`
   }
 `;
 
-const Description = styled.div`
-  & p, ul, li, span {
-    font-stretch: expanded;
-  }
-`;
 
 const CloseIconContainer = styled.button`
   font-size: 2em;
@@ -102,7 +98,7 @@ const MarkdownStyler = styled.div`
   img {
     border-radius: 5px;
   }
-  
+
   code {
     background: black;
     padding: 2px 5px;

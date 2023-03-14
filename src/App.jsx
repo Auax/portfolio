@@ -19,8 +19,12 @@ const menuItems = [
 const StyledMenu = styled(Menu)`
   position: fixed;
   z-index: 10;
-  left: 50px;
+  left: 30px;
   bottom: 30px;
+
+  & .Menu__ItemContainer {
+    margin-left: 20px;
+  }
 `;
 
 const router = createBrowserRouter(

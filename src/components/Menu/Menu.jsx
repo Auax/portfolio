@@ -8,10 +8,11 @@ import {AiOutlinePlus} from "react-icons/ai";
 
 export const MenuIcon = styled(AiOutlinePlus)`
   font-size: 3em;
-  background: #000309;
+  background: #000821;
   padding: 10px;
   border-radius: 50%;
   cursor: pointer;
+  border: 2px solid #00135e;
   transition: background .1s ease-in-out;
 
   &:hover {
@@ -19,7 +20,7 @@ export const MenuIcon = styled(AiOutlinePlus)`
   }
 `;
 
-const MenuContainer = styled.div`
+const MenuItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -183,7 +184,7 @@ const Menu = (props) => {
 
     return (
         <div className={props.className}>
-            <MenuContainer ref={containerRef}>
+            <MenuItemContainer ref={containerRef} className="Menu__ItemContainer">
                 <motion.div
                     variants={selectedIconVariants}
                     initial="hidden"
@@ -199,9 +200,8 @@ const Menu = (props) => {
                     animate={controls}>
                     {render}
                 </motion.div>
-            </MenuContainer>
+            </MenuItemContainer>
             <motion.div
-                style={{marginLeft: "-20px"}}
                 className="w-fit"
                 variants={toggleMenuVariants}
                 initial="hidden"
@@ -212,7 +212,8 @@ const Menu = (props) => {
                 onClick={() => setIsOpen(false)}
                 variants={mobileOverlayVariants}
                 initial="hidden"
-                animate={controls}/>
+                animate={controls}
+            />
         </div>
     );
 };

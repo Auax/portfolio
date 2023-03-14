@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {Subtitle, TitleBase} from "../components/UI/Texts";
+import Navbar from "../components/Navbar";
 
 
 const HeroContainer = styled.div`
@@ -46,6 +47,7 @@ const HeroSubtitle = styled(Subtitle)`
 const Home = () => {
     return (
         <div id="home" name="home">
+            <Navbar/>
             <HeroContainer>
                 <div className="text-center b">
                     <HeroTitle>Ibai Farina</HeroTitle>
