@@ -42,8 +42,8 @@ const Card = (props) => {
     };
 
     const TitleVariants = {
-        visible: {y: 0, transition: {duration: 1.3}},
-        hidden: {y: -15, fontStretch: 30}
+        visible: {x: 0, transition: {duration: 1.3}},
+        hidden: {x: -15, fontStretch: 30}
     }
 
     const BottomVariants = {

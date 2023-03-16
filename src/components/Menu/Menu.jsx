@@ -1,61 +1,17 @@
 import React, {useEffect, useRef, useState} from 'react';
 import SelectedIcon from "./SelectedIcon";
-import styled from "styled-components";
-import {Link as ScrollLink} from "react-scroll";
 import {useNavigate} from 'react-router-dom';
 import {motion, useAnimation} from "framer-motion";
-import {AiOutlinePlus} from "react-icons/ai";
+import {
+    MenuIcon,
+    MenuItemContainer,
+    MenuLink,
+    menuLinkVariants,
+    MenuMobileOverlay,
+    menuVariants, mobileOverlayVariants,
+    selectedIconVariants, toggleMenuVariants
+} from "./MenuStyling";
 
-export const MenuIcon = styled(AiOutlinePlus)`
-  font-size: 3em;
-  background: #000821;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid #00135e;
-  transition: background .1s ease-in-out;
-
-  &:hover {
-    background: #00135e;
-  }
-`;
-
-const MenuItemContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: fit-content;
-`;
-
-const MenuLink = styled(ScrollLink)`
-  color: ${({$active = true}) => $active ? "#fff" : "rgba(255, 255, 255, 0.6)"};
-  font-size: 2.5em;
-  text-transform: uppercase;
-  font-weight: 500;
-  cursor: pointer;
-  font-stretch: expanded;
-  transition: color 0.2s ease-in-out, margin-left 0.3s ease-in-out;
-
-  &:hover {
-    color: #dadada;
-  }
-`;
-
-const MenuMobileOverlay = motion(styled.div`
-  display: none;
-
-  @media (max-width: 1024px) {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    cursor: pointer;
-    backdrop-filter: blur(4px);
-    background: linear-gradient(to top, #000307, rgba(0, 0, 0, 80%) 60%, rgba(0, 0, 0, 0));
-  }
-`);
 
 const Menu = (props) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -81,59 +37,6 @@ const Menu = (props) => {
         controls.start(isOpen ? "visible" : "hidden");
     }, [controls, isOpen]);
 
-    const menuVariants = {
-        visible: {
-            opacity: 1,
-            display: "block",
-        },
-        hidden: {
-            opacity: 0,
-            transitionEnd: {display: "none"}
-        }
-    };
-
-    const menuLinkVariants = {
-        visible: {
-            opacity: 1,
-            x: 0,
-        },
-        hidden: {
-            opacity: 0,
-            x: -50,
-        }
-    };
-
-    const selectedIconVariants = {
-        visible: {
-            opacity: 1,
-            transition: {delay: .25}
-        },
-        hidden: {
-            opacity: 0,
-            transition: {duration: .1}
-        }
-    };
-
-    // Not actually hidden or visible, but I'm keeping the same names for convenience
-    const toggleMenuVariants = {
-        visible: {
-            rotate: 45
-        },
-        hidden: {
-            rotate: 0
-        }
-    };
-
-    const mobileOverlayVariants = {
-        visible: {
-            display: "block",
-            opacity: 1,
-        },
-        hidden: {
-            opacity: 0,
-            transitionEnd: {display: "none"},
-        }
-    };
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);

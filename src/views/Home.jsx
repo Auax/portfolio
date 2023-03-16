@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Typewriter from 'typewriter-effect';
 import {Subtitle, TitleBase} from "../components/UI/Texts";
+import background from "../resources/images/background.gif";
 import Navbar from "../components/Navbar";
 
 
@@ -9,10 +10,10 @@ const HeroContainer = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  background: #000249;
+  background: rgba(0, 2, 73, 0.8);
   text-align: left;
   margin: 0;
-  padding: 68px 100px 20px 100px;
+  padding: 68px 200px 20px 200px;
 
   @media (max-width: 1536px) {
     padding: 68px 80px 20px 80px;
@@ -23,11 +24,25 @@ const HeroContainer = styled.div`
   }
 `;
 
-const HeroTitle = styled.h1`
-  ${TitleBase};
-  margin-top: calc(var(--navbar-height) + 30px);
-  font-size: 8em;
+const Background = styled.div`
+  filter: blur(1px);
+  width: 100%;
+  height: 100vh;
+    //background: url(${background});
+  background-size: cover;
+  z-index: -5;
+  position: absolute;
+  overflow: hidden;
+`
 
+
+const HeroTitle = styled.h1`
+  font-stretch: expanded;
+  font-weight: 500;
+  margin-top: 100px;
+  font-size: 7em;
+  height: fit-content;
+  line-height: 100%;
 
   @media (max-width: 1536px) {
     font-size: 5em;
@@ -38,46 +53,52 @@ const HeroTitle = styled.h1`
   }
 `;
 
-const Console = styled.p`
-  font-size: 1.5em;
-  text-align: left;
-  display: flex;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 5px 15px;
-  border-radius: 10px;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  text-shadow: 0 10px 10px rgba(0, 0, 0, 0.12);
+const HeroSubtitle = styled.h2`
+  font-weight: bold;
+  margin-top: -15px;
+`
 
-  & .console__typewrite {
-    color: rgba(245, 245, 245, 0.9);
-    margin-left: 5px;
-  }
+const HeroDescription = styled.p`
+  font-size: 1em;
+  margin-top: 20px;
+  color: #cee8ff;
+  font-weight: 500;
+  width: 40%;
+  text-align: justify;
+  text-shadow: 0 10px 10px rgba(0, 0, 0, 0.12);
 `;
 
 
 const Home = () => {
     return (
         <div id="home" name="home">
-            {/*<Navbar/>*/}
+            <Navbar/>
+            <Background/>
             <HeroContainer>
-                <div className="text-center b">
-                    <HeroTitle>Ibai Farina</HeroTitle>
-                    <Console>
-                        <span className="text-green-400">></span>
-                        <div className="console__typewrite">
-                            <Typewriter
-                                options={{
-                                    strings: ["Python developer.", "Node.js developer."],
-                                    autoStart: true,
-                                    loop: true,
-                                }}
-                            />
-                        </div>
-                    </Console>
+                <HeroTitle>Ibai Farina</HeroTitle>
+                {/*<HeroSubtitle>*/}
+                {/*    <Typewriter*/}
+                {/*        options={{*/}
+                {/*            deleteSpeed: 20,*/}
+                {/*            strings: ["Python ",*/}
+                {/*                "Frontend development (React)",*/}
+                {/*                "Backend development (Express.js)",*/}
+                {/*                "Unreal Engine",*/}
+                {/*                "Unity",*/}
+                {/*                ".NET development",*/}
+                {/*                "C++"],*/}
+                {/*            autoStart: true,*/}
 
-                </div>
+                {/*            loop: true,*/}
+                {/*        }}*/}
+                {/*    /></HeroSubtitle>*/}
+                <HeroDescription>
+                    Hi! I'm Ibai Farina. I'm a full stack web developer from Barcelona, Spain. I have years of
+                    experience working with Python and I've also completed several web projects.
+                </HeroDescription>
+                <button className="btn w-fit mt-10" onClick={() => {
+                }}>My work
+                </button>
             </HeroContainer>
         </div>
 
