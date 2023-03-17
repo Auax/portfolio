@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Typewriter from 'typewriter-effect';
 import {Subtitle, TitleBase} from "../components/UI/Texts";
-import background from "../resources/images/background.gif";
 import Navbar from "../components/Navbar";
+import SkillWrapper from "../components/Skills/SkillWrapper";
 
 
 const HeroContainer = styled.div`
@@ -28,7 +28,6 @@ const Background = styled.div`
   filter: blur(1px);
   width: 100%;
   height: 100vh;
-    //background: url(${background});
   background-size: cover;
   z-index: -5;
   position: absolute;
@@ -76,22 +75,6 @@ const Home = () => {
             <Background/>
             <HeroContainer>
                 <HeroTitle>Ibai Farina</HeroTitle>
-                {/*<HeroSubtitle>*/}
-                {/*    <Typewriter*/}
-                {/*        options={{*/}
-                {/*            deleteSpeed: 20,*/}
-                {/*            strings: ["Python ",*/}
-                {/*                "Frontend development (React)",*/}
-                {/*                "Backend development (Express.js)",*/}
-                {/*                "Unreal Engine",*/}
-                {/*                "Unity",*/}
-                {/*                ".NET development",*/}
-                {/*                "C++"],*/}
-                {/*            autoStart: true,*/}
-
-                {/*            loop: true,*/}
-                {/*        }}*/}
-                {/*    /></HeroSubtitle>*/}
                 <HeroDescription>
                     Hi! I'm Ibai Farina. I'm a full stack web developer from Barcelona, Spain. I have years of
                     experience working with Python and I've also completed several web projects.
@@ -99,6 +82,8 @@ const Home = () => {
                 <button className="btn w-fit mt-10" onClick={() => {
                 }}>My work
                 </button>
+
+                <SkillWrapper></SkillWrapper>
             </HeroContainer>
         </div>
 

@@ -50,8 +50,8 @@ decrypt the data.
 
 ## Websites
 To find more information about Passax or install it visit one of the following sites (or the GitHub repository): 
-* [Passax official website](https://auax.github.io/passax).
-* [Passax in PYPI](https://pypi.org/project/passax).
+* [Passax official website](https://auax.github.io/passax)  
+* [Passax in PYPI](https://pypi.org/project/passax)
 
 ## Supported Systems
 - macOS (Only tried in Monterrey)
