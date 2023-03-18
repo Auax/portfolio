@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 import {AiFillGithub} from "react-icons/ai";
-import {SiUpwork} from "react-icons/si";
 
 
 const NavbarContainer = styled.nav`
@@ -11,15 +10,15 @@ const NavbarContainer = styled.nav`
   width: 100%;
   height: var(--navbar-height);
   position: absolute;
-  padding: 0 200px;
+  padding: 0 300px;
   margin-top: 30px;
 
   @media (max-width: 1536px) {
-    padding: 68px 80px 20px 80px;
+    padding: 68px 110px 0 110px;
   }
 
   @media (max-width: 1024px) {
-    padding: 68px 30px 20px 30px;
+    padding: 60px 60px 0 60px;
   }
 `;
 

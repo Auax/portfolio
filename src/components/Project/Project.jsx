@@ -16,7 +16,7 @@ const Project = (props) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     return (
         <div>
-            <ProjectContainer className="py-5">
+            <ProjectContainer className="py-10">
                 <Card title={props.project.title}
                       description={props.project.caption}
                       image={props.project.img}
