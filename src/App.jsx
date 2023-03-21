@@ -9,6 +9,7 @@ import Home from "./views/Home";
 import Projects from "./views/Projects/Projects";
 import Menu from "./components/Menu/Menu";
 import styled from "styled-components";
+import Contact from "./views/Contact/Contact";
 
 const menuItems = [
     {label: 'Home', section: 'home'},
@@ -18,7 +19,7 @@ const menuItems = [
 
 const StyledMenu = styled(Menu)`
   position: fixed;
-  z-index: 10;
+  z-index: 20;
   left: 30px;
   bottom: 30px;
 
@@ -35,6 +36,7 @@ const router = createBrowserRouter(
                     <StyledMenu items={menuItems}/>
                     <Home/>
                     <Projects/>
+                    <Contact/>
                 </>
             }
             />

@@ -75,7 +75,7 @@ const Menu = (props) => {
                             to={item.section}
                             spy={true}
                             smooth={true}
-                            offset={0}
+                            offset={-10}
                             duration={500}>
                             {item.label}
                         </MenuLink>
@@ -86,7 +86,7 @@ const Menu = (props) => {
     );
 
     return (
-        <div className={props.className}>
+        <div className={`${props.className}`}>
             <MenuItemContainer ref={containerRef} className="Menu__ItemContainer">
                 <motion.div
                     variants={selectedIconVariants}

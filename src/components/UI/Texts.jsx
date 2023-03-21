@@ -1,7 +1,6 @@
 import styled, {css} from "styled-components";
 
 export const TitleBase = css`
-  color: white;
   font-weight: bold;
   font-stretch: expanded;
   line-height: 96%;

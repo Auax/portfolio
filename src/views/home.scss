@@ -1,9 +1,10 @@
 .main_section {
+  position: relative;
+  z-index: 10;
   display: flex;
   align-items: center;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 2, 73, 0.8);
   margin: 0;
   padding: 68px 300px 20px 300px;
 
@@ -18,7 +19,6 @@
 
 .main_section__presentation {
   margin-top: -100px;
-  position: relative;
   display: grid;
   grid-template-columns: 60% auto;
   text-align: left;
@@ -31,7 +31,17 @@
   }
 }
 
-.presentation__title {
+.presentation__sub-header {
+  font-size: 1.5em;
+  width: fit-content;
+  font-weight: 500;
+  background: linear-gradient(to right, #6b71f1 20%, #ced7fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.presentation__header {
+  margin-left: -6px;
   font-stretch: expanded;
   font-weight: 500;
   font-size: 7em;
@@ -49,8 +59,7 @@
 
 .presentation__description {
   font-size: 1em;
-  margin-top: 20px;
-  color: #cee8ff;
+  color: #e1e1e1;
   font-weight: 500;
   width: 80%;
   text-align: justify;

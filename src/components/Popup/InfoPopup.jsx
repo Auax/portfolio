@@ -14,7 +14,7 @@ const Background = motion(styled.div`
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(20px);
   display: none;
-  z-index: 8;
+  z-index: 20;
   cursor: pointer;
 `);
 
@@ -28,7 +28,7 @@ const Container = motion(styled.div`
   background: rgb(0, 0, 0);
   padding: 100px 60px;
   box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
-  z-index: 10;
+  z-index: 30;
 
   @media (max-width: 1024px) {
     width: 100%;

@@ -5,11 +5,10 @@ import {motion} from "framer-motion";
 
 export const MenuIcon = styled(AiOutlinePlus)`
   font-size: 3em;
-  background: #000821;
+  background: #040021;
   padding: 10px;
   border-radius: 50%;
   cursor: pointer;
-  border: 2px solid #00135e;
   transition: background .1s ease-in-out;
 
   &:hover {

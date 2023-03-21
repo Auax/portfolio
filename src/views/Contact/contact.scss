@@ -1,0 +1,33 @@
+.contact__container {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  text-align: center;
+  width: 100%;
+  padding: 40px;
+}
+
+.contact__form {
+  margin-top: 10px;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+  & input, textarea {
+    margin-top: 5px;
+  }
+}
+
+.contact__input {
+  font-stretch: expanded;
+  line-height: 96%;
+  padding: 15px 15px;
+  width: 100%;
+  color: white;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  font-size: .9em;
+  resize: none;
+}
