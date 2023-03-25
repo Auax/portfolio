@@ -1,6 +1,6 @@
 import React from 'react';
 import Tilt from 'react-parallax-tilt';
-import "./Icons.scss";
+import "./Skills.scss";
 
 
 export const Icon = (props) => {

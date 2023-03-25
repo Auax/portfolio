@@ -37,17 +37,15 @@ const Project = (props) => {
     return (
         <>
             <motion.div
-                className={`${props.className} py-10`}
+                className={`py-10 ${props.className || ""}`}
                 ref={ref}
                 animate={controls}
                 initial="hidden"
                 variants={ProjectVariants}>
 
                 <div className={`project__container ${props.reverse ? "reverse-grid" : ""}`}>
-                    <div className="project__image-container">
-                        <img className="project__image" src={props.project.img} alt="image"/>
-                    </div>
-                    <div>
+                    <img className="project__image" src={props.project.img} alt="image"/>
+                    <div className="project__info">
                         <div className="flex justify-between">
                             <a href={props.project.repo} target="_blank"
                                className="project__title">{props.project.title}</a>

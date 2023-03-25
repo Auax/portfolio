@@ -1,18 +1,26 @@
 .reverse-grid {
-  div:nth-child(1) {
-    grid-row: 0;
-  }
-
-  div:nth-child(2) {
-    grid-row: 1;
+  @media (min-width: 1024px) {
+    & .project__info {
+      grid-row: 1;
+    }
   }
 }
 
 .project__container {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr auto;
+  gap: 3.2em;
   align-items: center;
-  gap: 4em;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 2em;
+
+    & .project__info {
+      grid-row: 1;
+    }
+  }
 }
 
 .project__title {
@@ -33,22 +41,20 @@
 .project__description {
   text-align: justify;
   color: #1c1c1c;
-  margin-top: 5px;
   font-size: .9em;
   font-weight: 500;
-  width: 100%;
-}
-
-.project__image-container {
-  background: #2a2a2a;
-  border-radius: 20px;
-  overflow: hidden;
-  width: 400px;
-  height: 400px;
 }
 
 .project__image {
-  height: 100%;
+  border-radius: 20px;
+  height: auto;
+  width: 400px;
+  min-width: 400px;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .project__tags-container {

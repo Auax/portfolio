@@ -1,6 +1,6 @@
 import React from 'react';
 import {Icon} from "./Icon";
-import "./Icons.scss";
+import "./Skills.scss";
 
 
 const SkillWrapper = () => {

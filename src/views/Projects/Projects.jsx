@@ -3,7 +3,7 @@ import musicquizImg from "../../resources/images/musicquiz.jpg";
 import discordRpcImg from "../../resources/images/discordrpc.jpg";
 import passaxImg from "../../resources/images/passax.jpg";
 
-import "./Projects.scss";
+import "./projects.scss";
 import {MusicQuizMD, RpcMD, PassaxMD} from "./ProjectsMarkdown";
 import Project from "../../components/Project/Project";
 import {TitleH1} from "../../components/UI/Texts";
@@ -41,7 +41,7 @@ const Projects = () => {
     return (
         <div className="projects__container">
             <div name="projects" id="projects"
-                 className="md:w-3/4 lg:w-2/3 2xl:w-1/2 w-full mx-auto px-10 md:px-20"
+                 // className="md:w-3/4 lg:w-2/3 2xl:w-1/2 w-full mx-auto px-10 md:px-20 bg-red-500"
             >
                 <TitleH1 className="mt-20 mb-10 text-center text-black">Projects</TitleH1>
                 {projects.map((item, idx) =>

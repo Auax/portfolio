@@ -78,16 +78,3 @@ code {
   background: white;
   color: black;
 }
-
-.noise {
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background-size: cover;
-  background: url("resources/images/noise.jpg") repeat center;
-  mix-blend-mode: screen;
-  opacity: .7;
-}

@@ -10,15 +10,16 @@ const NavbarContainer = styled.nav`
   width: 100%;
   height: var(--navbar-height);
   position: absolute;
+  z-index: 20;
   padding: 0 300px;
   margin-top: 30px;
-
+  
   @media (max-width: 1536px) {
-    padding: 68px 110px 0 110px;
+    padding: 0 110px 0 110px;
   }
 
   @media (max-width: 1024px) {
-    padding: 60px 60px 0 60px;
+    padding: 0 60px 0 60px;
   }
 `;
 
@@ -41,8 +42,8 @@ const NavbarLinks = styled.a`
 
 const Separator = styled.div`
   width: 1px;
-  height: 60%;
-  background: rgba(255, 255, 255, 0.3);
+  height: 20px;
+  background: rgba(255, 255, 255, .3);
   margin: 0 10px;
 `;
 

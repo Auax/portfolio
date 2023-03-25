@@ -2,3 +2,17 @@
   background: white;
   padding: 1em;
 }
+
+#projects {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+
+  @media (max-width: 1536px) {
+    width: 70%;
+  }
+
+  @media (max-width: 1024px) {
+    width: 85%;
+  }
+}

@@ -5,7 +5,8 @@ import {motion} from "framer-motion";
 
 export const MenuIcon = styled(AiOutlinePlus)`
   font-size: 3em;
-  background: #040021;
+  background: rgba(0, 23, 61, 0.6);
+  border: 2px solid rgba(156, 160, 255, 0.2);
   padding: 10px;
   border-radius: 50%;
   cursor: pointer;
@@ -38,19 +39,15 @@ export const MenuLink = styled(ScrollLink)`
 `;
 
 export const MenuMobileOverlay = motion(styled.div`
-  display: none;
-
-  @media (max-width: 1024px) {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    cursor: pointer;
-    backdrop-filter: blur(4px);
-    background: linear-gradient(to top, #000307, rgba(0, 0, 0, 80%) 60%, rgba(0, 0, 0, 0));
-  }
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  background: linear-gradient(to top, #000307, rgba(0, 0, 0, 80%) 60%, rgba(0, 0, 0, 0));
 `);
 
 

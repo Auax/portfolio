@@ -5,7 +5,7 @@ import {
     Outlet,
     Route
 } from "react-router-dom";
-import Home from "./views/Home";
+import Home from "./views/Home/Home";
 import Projects from "./views/Projects/Projects";
 import Menu from "./components/Menu/Menu";
 import styled from "styled-components";

@@ -25,18 +25,9 @@ export const TitleH1 = styled.h1`
 
 export const TitleH2 = styled.h2`
   ${TitleBase};
-  margin-top: 100px;
   font-size: 4em;
 
   @media (max-width: 1536px) {
-    font-size: 3em;
-  }
-
-  @media (max-width: 1024px) {
-    font-size: 5em;
-  }
-
-  @media (max-width: 700px) {
     font-size: 3em;
   }
 `;
