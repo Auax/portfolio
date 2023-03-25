@@ -5,8 +5,8 @@ import {motion} from "framer-motion";
 
 export const MenuIcon = styled(AiOutlinePlus)`
   font-size: 3em;
-  background: rgba(0, 23, 61, 0.6);
-  border: 2px solid rgba(156, 160, 255, 0.2);
+  border: 2px solid rgba(143, 162, 255, 0.2);
+  background: #090046;
   padding: 10px;
   border-radius: 50%;
   cursor: pointer;
