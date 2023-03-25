@@ -52,8 +52,8 @@ const Navbar = () => {
         <NavbarContainer>
             <NavbarText>Auax</NavbarText>
             <div className="flex h-full items-center">
-                <NavbarLinks href="#">Work</NavbarLinks>
-                <NavbarLinks href="#">Contact</NavbarLinks>
+                <NavbarLinks href="#work">Work</NavbarLinks>
+                <NavbarLinks href="#contact">Contact</NavbarLinks>
                 <Separator/>
                 <NavbarLinks target="_blank" href="https://github.com/auax"><AiFillGithub size={22}/></NavbarLinks>
             </div>
