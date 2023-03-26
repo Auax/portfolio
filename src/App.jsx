@@ -30,7 +30,7 @@ const StyledMenu = styled(Menu)`
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route>
-            <Route path="/portfolio" element={
+            <Route path="/*" element={
                 <>
                     <StyledMenu items={menuItems}/>
                     <Home/>
@@ -39,7 +39,6 @@ const router = createBrowserRouter(
                 </>
             }
             />
-            <Route path="/projects" element={<Projects/>}/>
             {/*<Route path="503" element={<ServiceUnavailable/>}/>*/}
             {/*<Route path="*" element={<NotFoundPage/>}/>*/}
         </Route>

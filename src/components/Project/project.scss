@@ -34,7 +34,7 @@
   }
 
   @media (max-width: 700px) {
-    font-size: 2em;
+    font-size:2em;
   }
 }
 
@@ -54,11 +54,14 @@
   @media (max-width: 1024px) {
     width: 100%;
     height: auto;
+    min-width: 0;
   }
 }
 
 .project__tags-container {
-  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
   color: #505050;
 }
 
@@ -69,6 +72,12 @@
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   margin-right: 5px;
+  white-space: nowrap;
+  margin-top: 5px;
+
+  @media (max-width: 768px) {
+    font-size: .7em;
+  }
 }
 
 .project__expand-btn {

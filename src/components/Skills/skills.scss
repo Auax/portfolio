@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   height: 480px;
+  max-width: 100%;
 
   @media (max-width: 1536px) {
     height: 400px;
@@ -12,6 +13,10 @@
     margin-right: auto;
     width: 370px;
     height: 320px;
+  }
+  @media (max-width: 480px) {
+    height: 240px;
+    margin-top: 30px;
   }
 }
 
@@ -30,7 +35,7 @@
 .skill__large {
   width: 120px;
   height: 120px;
-  border-radius: 20px;
+  border-radius: 20%;
   background: url("../../resources/images/background.jpg") center;
   background-size: 150%;
 
@@ -43,6 +48,11 @@
     width: 80px;
     height: 80px;
   }
+
+  @media (max-width: 480px) {
+    width: 70px;
+    height: 70px;
+  }
 }
 
 
@@ -52,6 +62,11 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.1);
+
+  @media (max-width: 480px) {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 // Individual logos
@@ -76,12 +91,12 @@
 }
 
 .skill-net {
-  top: 40%;
+  top: 44%;
   left: 16%;
 }
 
 .skill-swift {
-  top: 50%;
+  top: 45%;
   left: 40%;
 }
 

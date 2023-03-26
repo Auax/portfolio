@@ -10,16 +10,12 @@ export const TitleH1 = styled.h1`
   ${TitleBase};
   font-size: 5em;
 
-  @media (max-width: 1536px) {
-    font-size: 4em;
-  }
-
   @media (max-width: 1024px) {
-    font-size: 6em;
+    font-size: 4em;
   }
 
   @media (max-width: 700px) {
-    font-size: 4em;
+    font-size: 3em;
   }
 `;
 

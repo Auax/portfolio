@@ -25,7 +25,7 @@ const Projects = () => {
             description: PassaxMD,
             img: passaxImg,
             repo: "https://github.com/auax/passax",
-            tags: ["Python 3", "Cryptography", "Chrome DEV"]
+            tags: ["Python 3", "Cryptography", "Chrome Development"]
         },
         {
             title: "Discord RPC",
@@ -40,9 +40,7 @@ const Projects = () => {
 
     return (
         <div className="projects__container">
-            <div name="projects" id="projects"
-                 // className="md:w-3/4 lg:w-2/3 2xl:w-1/2 w-full mx-auto px-10 md:px-20 bg-red-500"
-            >
+            <div name="projects" id="projects">
                 <TitleH1 className="mt-20 mb-10 text-center text-black">Projects</TitleH1>
                 {projects.map((item, idx) =>
                     <Project project={item} key={item.title} reverse={idx % 2 !== 0}/>
