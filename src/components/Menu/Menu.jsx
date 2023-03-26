@@ -11,18 +11,19 @@ import {
     menuVariants, mobileOverlayVariants,
     selectedIconVariants, toggleMenuVariants
 } from "./MenuStyling";
+import {useSectionController} from "./useSectionController";
 
 
 const Menu = (props) => {
     const [isOpen, setIsOpen] = useState(false);
     // State for currently selected section index
-    const [sectionIndex, setSectionIndex] = useState(props.selected || 0);
     // State for the height of the menu container
     const [menuHeight, setMenuHeight] = useState(0);
     // Reference to the menu container
     const containerRef = useRef(null);
-    // React Router's navigate hook
-    const navigate = useNavigate();
+
+    const [sectionIndex, updateSection] = useSectionController(props.selected || 0);
+
 
     // Animations
     const controls = useAnimation();
@@ -41,13 +42,6 @@ const Menu = (props) => {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
-
-    // Update the selected section index and navigate to the corresponding section
-    const updateSection = (section, idx) => {
-        if (section === undefined) return;
-        navigate(`#${section}`);
-        setSectionIndex(idx);
-    }
 
     // Render the menu items
     const render = props.items.map((item, index) => {

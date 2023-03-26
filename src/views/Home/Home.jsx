@@ -1,3 +1,4 @@
+import {Link as ScrollLink} from "react-scroll";
 import Navbar from "../../components/Navbar";
 import SkillWrapper from "../../components/Skills/SkillWrapper";
 import "./home.scss";
@@ -15,7 +16,9 @@ const Home = () => {
                             Hi! I'm Ibai Farina. I'm a full stack web developer from Barcelona, Spain. I have years of
                             experience working with Python and I've also completed several web projects.
                         </div>
-                        <button className="btn sm:w-fit mt-5">My work</button>
+                        <ScrollLink to="projects" duration={500} smooth={true}>
+                            <button className="btn sm:w-fit mt-5">My work</button>
+                        </ScrollLink>
                     </div>
                     <SkillWrapper/>
                 </div>

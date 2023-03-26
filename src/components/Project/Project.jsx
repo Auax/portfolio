@@ -55,7 +55,7 @@ const Project = (props) => {
                         </div>
                         <p className="project__description">{props.project.caption}</p>
                         <div className="project__tags-container">
-                            {props.project.tags.map(tag => <span className="project__tag">{tag}</span>)}
+                            {props.project.tags.map(tag => <span className="project__tag" key={tag}>{tag}</span>)}
                         </div>
                     </div>
                 </div>

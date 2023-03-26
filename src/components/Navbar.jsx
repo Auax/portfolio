@@ -1,6 +1,8 @@
 import React from 'react';
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {AiFillGithub} from "react-icons/ai";
+import {useSectionController} from "./Menu/useSectionController";
+import {Link as ScrollLink} from "react-scroll";
 
 
 const NavbarContainer = styled.nav`
@@ -13,7 +15,7 @@ const NavbarContainer = styled.nav`
   z-index: 20;
   padding: 0 300px;
   margin-top: 30px;
-  
+
   @media (max-width: 1536px) {
     padding: 0 110px 0 110px;
   }
@@ -27,9 +29,10 @@ const NavbarText = styled.span`
   font-weight: 500;
 `;
 
-const NavbarLinks = styled.a`
+const NavbarLinksCss = css`
   font-size: .8em;
   margin: 0 10px;
+  cursor: pointer;
 
   svg {
     color: rgba(255, 255, 255, 0.5);
@@ -40,6 +43,14 @@ const NavbarLinks = styled.a`
   }
 `;
 
+const NavbarScrollLink = styled(ScrollLink)`
+  ${NavbarLinksCss};
+`;
+
+const NavbarLink = styled.a`
+  ${NavbarLinksCss};
+`;
+
 const Separator = styled.div`
   width: 1px;
   height: 20px;
@@ -48,14 +59,15 @@ const Separator = styled.div`
 `;
 
 const Navbar = () => {
+
     return (
         <NavbarContainer>
             <NavbarText>Auax</NavbarText>
             <div className="flex h-full items-center">
-                <NavbarLinks href="#work">Work</NavbarLinks>
-                <NavbarLinks href="#contact">Contact</NavbarLinks>
+                <NavbarScrollLink to="projects" duration={500} smooth={true}>Work</NavbarScrollLink>
+                <NavbarScrollLink to="contact" duration={500} smooth={true}>Contact</NavbarScrollLink>
                 <Separator/>
-                <NavbarLinks target="_blank" href="https://github.com/auax"><AiFillGithub size={22}/></NavbarLinks>
+                <NavbarLink target="_blank" href="https://github.com/auax"><AiFillGithub size={22}/></NavbarLink>
             </div>
         </NavbarContainer>
     );
