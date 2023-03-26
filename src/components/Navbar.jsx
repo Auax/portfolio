@@ -17,11 +17,15 @@ const NavbarContainer = styled.nav`
   margin-top: 30px;
 
   @media (max-width: 1536px) {
-    padding: 0 110px 0 110px;
+    padding: 0 80px 0 80px;
   }
 
   @media (max-width: 1024px) {
     padding: 0 60px 0 60px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 40px 0 40px;
   }
 `;
 
