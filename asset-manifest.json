@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.00205e95.css",
-    "main.js": "/portfolio/static/js/main.9fff2d6e.js",
+    "main.css": "/portfolio/static/css/main.a83298d2.css",
+    "main.js": "/portfolio/static/js/main.3fd9f313.js",
     "static/media/background.jpg": "/portfolio/static/media/background.57cac77e2e145a0e7659.jpg",
     "static/media/discordrpc.jpg": "/portfolio/static/media/discordrpc.20cbed32a4bb45661f41.jpg",
     "static/media/Mona-Sans.woff2": "/portfolio/static/media/Mona-Sans.955a87eb3766a32ac970.woff2",
@@ -9,12 +9,12 @@
     "static/media/passax.jpg": "/portfolio/static/media/passax.939925d166f8b4e5c942.jpg",
     "static/media/musicquiz.jpg": "/portfolio/static/media/musicquiz.4c53ddab3ac2fe1710c9.jpg",
     "index.html": "/portfolio/index.html",
-    "static/media/StarIcon.svg": "/portfolio/static/media/StarIcon.e8162d3507bb5f93d3108b1b1c3d2670.svg",
-    "main.00205e95.css.map": "/portfolio/static/css/main.00205e95.css.map",
-    "main.9fff2d6e.js.map": "/portfolio/static/js/main.9fff2d6e.js.map"
+    "static/media/StarIcon.svg": "/portfolio/static/media/StarIcon.8092fd5a2739f155d46ba724dadd1fa4.svg",
+    "main.a83298d2.css.map": "/portfolio/static/css/main.a83298d2.css.map",
+    "main.3fd9f313.js.map": "/portfolio/static/js/main.3fd9f313.js.map"
   },
   "entrypoints": [
-    "static/css/main.00205e95.css",
-    "static/js/main.9fff2d6e.js"
+    "static/css/main.a83298d2.css",
+    "static/js/main.3fd9f313.js"
   ]
 }
