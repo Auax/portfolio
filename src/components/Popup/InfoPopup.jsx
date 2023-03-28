@@ -55,7 +55,7 @@ const Title = styled.h1`
 const CloseIconContainer = styled.button`
   font-size: 2em;
   color: white;
-  position: absolute;
+  position: fixed;
   left: 10px;
   top: 10px;
 `;

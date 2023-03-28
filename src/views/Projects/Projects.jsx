@@ -21,7 +21,7 @@ const Projects = () => {
         },
         {
             title: "Passax",
-            caption: "Python3 library to retrieve Chrome-based browser's saved login info.",
+            caption: "Python3 library to retrieve Chrome-based browser's saved login info. Passax uses cryptography to decrypt Chrome's database and fetch its content.",
             description: PassaxMD,
             img: passaxImg,
             repo: "https://github.com/auax/passax",
